@@ -111,6 +111,8 @@ Count_glo = 0
 nLog("当前区服："..tostring(ServerTypeGlo))
 
 --在这里检测是否是游戏得主界面，如果不是 循环提示
+
+--[[
 if ServerTypeGlo == "国服" then
 	bid = "com.bilibili.fatego"
 elseif ServerTypeGlo == "台服" then
@@ -129,6 +131,7 @@ while true do
 	end
 	
 end
+--]]
 
 
 --创建回调函数
