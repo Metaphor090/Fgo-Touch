@@ -163,7 +163,7 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 			Battle_confirm_ret = lowfunction.Battle_confirm()
 			if Battle_confirm_ret == 1 then
 			
-				toast("准备战斗",3)
+				--toast("准备战斗",3)
 				break
 			end
 		
@@ -187,7 +187,7 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 				
 				Tools.Source_Single_Click(Moive_confirm_point[1],Moive_confirm_point[2])
 			
-				toast("准备战斗",3)
+				--toast("准备战斗",3)
 				break
 			else
 				--持续检测5次没有的话就走下一步
@@ -299,7 +299,7 @@ function invoking.FightEX(StoryOS)
 		
 		--这里插入动画
 	
-		toast("技能计算",3)
+		--toast("技能计算",3)
 		--toast("技能计算",1)
 		--！角色存活情况
 		--！御主技能cd情况

@@ -118,7 +118,7 @@ function lowfunction.Skill_Do(Skill_No,Skill_Type,Skill_colors)
 	--===============================================================
 
 	--分开算两个的cd
-	
+	--dialog("此时的Skill_Type："..tostring(Skill_Type))
 	if Skill_No < 10 then 
 		
 		normal_cd = lowfunction.Skill_comfirm(Skill_No,Skill_colors)--检查普通技能的cd
@@ -2438,16 +2438,7 @@ function lowfunction.GetCharPos(SkillNo,Side)
 	
 	local CharNo = lowfunction.GetCharNo(SkillNo) --获取当前角色编号
 	
-	if CharNo == 4  then --御主技能
-		local LocationTable = {LeftLocation3_glo,MidLocation3_glo,RightLocation3_glo}
-		for key,value in ipairs(LocationTable) do
-			if value == 1 then --找到主攻手 获取其编号  1主攻 2 副攻 3 辅助
-				BuffChar = key
-				BaoJuChar = key
-			end
-		end
-		return BuffChar,BaoJuChar,CharNo
-	end
+	
 	
 	if Side == 1 then
 		local LocationTable = {LeftLocation1_glo,MidLocation1_glo,RightLocation1_glo}
@@ -2489,7 +2480,16 @@ function lowfunction.GetCharPos(SkillNo,Side)
 			end
 		end
 		
-	
+		if CharNo == 4  then --御主技能
+			local LocationTable = {LeftLocation1_glo,MidLocation1_glo,RightLocation1_glo}
+			for key,value in ipairs(LocationTable) do
+				if value == 1 then --找到主攻手 获取其编号  1主攻 2 副攻 3 辅助
+					BuffChar = key
+					BaoJuChar = key
+				end
+			end
+			return BuffChar,BaoJuChar,CharNo
+		end
 	end
 	
 	
@@ -2530,6 +2530,16 @@ function lowfunction.GetCharPos(SkillNo,Side)
 					end
 				end
 			end
+		end
+		if CharNo == 4  then --御主技能
+			local LocationTable = {LeftLocation2_glo,MidLocation2_glo,RightLocation2_glo}
+			for key,value in ipairs(LocationTable) do
+				if value == 1 then --找到主攻手 获取其编号  1主攻 2 副攻 3 辅助
+					BuffChar = key
+					BaoJuChar = key
+				end
+			end
+			return BuffChar,BaoJuChar,CharNo
 		end
 	
 	end
@@ -2574,7 +2584,16 @@ function lowfunction.GetCharPos(SkillNo,Side)
 				end
 			end
 		end
-	
+		if CharNo == 4  then --御主技能
+			local LocationTable = {LeftLocation3_glo,MidLocation3_glo,RightLocation3_glo}
+			for key,value in ipairs(LocationTable) do
+				if value == 1 then --找到主攻手 获取其编号  1主攻 2 副攻 3 辅助
+					BuffChar = key
+					BaoJuChar = key
+				end
+			end
+			return BuffChar,BaoJuChar,CharNo
+		end
 	end
 	
 	

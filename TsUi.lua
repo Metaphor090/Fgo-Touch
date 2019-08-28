@@ -5,10 +5,10 @@ VersionType = "小精灵安卓" --触动精灵IOS  小精灵安卓 小精灵IOS
 DefDir = "小精灵IOS"
 os_type = getOSType();
 if os_type == "android" then
-	VersionType = "触动精灵安卓"
+	VersionType = "小精灵安卓"
 	orient = 0
 else
-	VersionType = "触动精灵IOS"
+	VersionType = "小精灵IOS"
 	orient = 1
 end
 if VersionType == "触动精灵安卓" then
