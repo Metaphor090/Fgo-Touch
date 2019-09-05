@@ -208,8 +208,8 @@ Stage_flag = {
 
 
 -- 技能全局表
-Skill_Site = {{66,572},{166,574},{259,580},{387,575},{482,575},
-{576,576},{703,578}, {800,574}, {895,579}
+Skill_Site = {{56,  556},{ 163,  581},{ 269,  564},{ 395,  568},{497,  564},
+{589,  566},{719,  575}, {791,  566}, {882,  564}
 }
 -- 技能特征组
 Skill_colors = {}
@@ -294,6 +294,8 @@ Battle_Over_table =
 } 
 
 
+
+
 -- 战斗结束固定点
 Battle_Over_Point = {1121,680}
 
@@ -306,6 +308,16 @@ NewBattle_Over_Table = {
 	{x=1005,y=679,color=0xd1d1d1,offset=0x101010},
 	{x=768,y=111,color=0xffffff,offset=0x101010},
 	{x=868,y=111,color=0xffffff,offset=0x101010}
+
+}
+
+NewBattle_Over_Table2 = {
+
+	Anchor="Middle",MainPoint={x=638,y=346},
+	Area={272,522,342,592},
+	{x=304,y=549,color=0x82dcfd,offset=0x202020},
+	{x=309,y=562,color=0x1b3a85,offset=0x202020},
+	{x=314,y=545,color=0x428edc,offset=0x202020}
 
 }
 NewBattle_Over_Flag = {
@@ -332,17 +344,16 @@ Battle_Over_Flag = {
 NextStroyTable = {
 	Anchor="Middle",MainPoint={x=638,y=346},
 	Area={8,83,1278,618},
-	{x=761,y=304,color=0xffff2d,offset=0x404040},
-	{x=762,y=304,color=0xffff2d,offset=0x404040},
-	{x=763,y=305,color=0xfff737,offset=0x404040},
-	--{x=769,y=307,color=0xfff324,offset=0x404040},
-	--{x=777,y=311,color=0xffd917,offset=0x404040},
-	--{x=783,y=314,color=0xffcd1e,offset=0x404040},
-	--{x=790,y=313,color=0xffcb2f,offset=0x404040},
-	--{x=797,y=309,color=0xffe220,offset=0x404040},
-	--{x=808,y=305,color=0xfff027,offset=0x404040}
-
+	{x=625,y=257,color=0xfcc409,offset=0x202020},
+	{x=634,y=263,color=0xfdab0e,offset=0x202020},
+	{x=639,y=267,color=0xfe9f09,offset=0x202020},
+	{x=664,y=250,color=0x27281e,offset=0x404040},
+	{x=639,y=257,color=0x3e3a1f,offset=0x404040},
+	{x=608,y=255,color=0x32311e,offset=0x404040}
+	
 }
+
+
 
 --剧情room特征码
 StoryRoomTable = {
@@ -352,7 +363,17 @@ StoryRoomTable = {
 	{x=1075,y=138,color=0x133d76,offset=0x202020},
 	{x=1081,y=211,color=0xbbb3a3,offset=0x202020}
 }
-
+--管理室特征码
+ControlRoomTable = {
+	Anchor="Middle",MainPoint={x=638,y=346},
+	Area={31,18,59,65},
+	{x=42,y=39,color=0x2c356e,offset=0x151515},
+	{x=41,y=48,color=0xd7d7df,offset=0x151515},
+	{x=48,y=43,color=0x1c254c,offset=0x151515},
+	{x=45,y=31,color=0x2e3d66,offset=0x151515},
+	{x=50,y=54,color=0x141c3d,offset=0x151515}
+	
+}
 --AP补充标识
 AP_Recharge_Close = {636,617}
 AP_Recharge_flag = {831,562}
@@ -480,10 +501,15 @@ Servent_name_table = {
 {
 	Anchor="Middle",MainPoint={x=640,y=360},
 	Area={32,173,221,719},
-	{x=184,y=259,color=0x656dae,offset=0x101010},
-	{x=175,y=266,color=0x31315a,offset=0x101010},
-	{x=158,y=264,color=0xfdedbb,offset=0x101010},
-	{x=138,y=256,color=0x72c5a5,offset=0x101010}
+	
+	{ x= 186,  y=246,color= 0x646cae,offset=0x101010},
+	{ x=  57,  y=302, color=0x404861,offset=0x101010},
+	{ x= 116, y= 299, color=0xffffff,offset=0x101010},
+	{ x= 127, y= 250,color= 0xfeedcc,offset=0x101010},
+	{ x= 107, y= 218, color=0xfffac9,offset=0x101010},
+	{ x= 180, y= 226, color=0x784f3f,offset=0x101010},
+	{ x= 188, y= 218, color=0xffffff,offset=0x101010},
+
 } ,
  
 
@@ -491,11 +517,13 @@ Servent_name_table = {
 {
 	Anchor="Middle",MainPoint={x=640,y=360},
 	Area={32,173,221,719},
-	{x=135,y=254,color=0xfcfcfc,offset=0x101010},
-	{x=142,y=251,color=0x143933,offset=0x101010},
-	{x=142,y=255,color=0x538f71,offset=0x101010}
 
-
+	{  x= 68,  y=308, color=0xf5edec,offset=0x101010},
+	{  x=107, y= 281, color=0xb07f55,offset=0x101010},
+	{  x=118, y= 271, color=0xfceccb,offset=0x101010},
+	{ x= 160, y= 280, color=0xe59a71,offset=0x101010},
+	{ x= 166, y= 286, color=0x161211,offset=0x101010},
+	{ x= 174, y= 285, color=0x951808,offset=0x101010},
 } ,
 大王 =  
  
@@ -518,7 +546,13 @@ Servent_name_table = {
 	{x=64,y=308,color=0xffffd8,offset=0x101010},
 	{x=153,y=244,color=0xd3a043,offset=0x101010},
 	{x=105,y=196,color=0xfffb83,offset=0x101010},
-	{x=141,y=262,color=0xfffdc7,offset=0x101010}
+	{x=141,y=262,color=0xfffdc7,offset=0x101010},
+	{ x=  77, y= 266, color=0x4c3b2b,offset=0x101010},
+	{ x= 103, y= 221, color=0xfdf579,offset=0x101010},
+	{ x=  97, y= 292, color=0xffffd0,offset=0x101010},
+	{ x= 119, y= 292, color=0x99684f,offset=0x101010},
+	{ x= 154, y= 274, color=0xdbb281,offset=0x101010},
+	{ x= 168, y= 271, color=0x40372f,offset=0x101010},
 } ,
 
  
@@ -552,7 +586,14 @@ Servent_name_table = {
 	{x=182,y=234,color=0xf6f6f6,offset=0x101010},
 	{x=126,y=279,color=0xf5d0d8,offset=0x101010},
 	{x=188,y=257,color=0xfeefef,offset=0x101010},
-	{x=63,y=291,color=0x71a2e5,offset=0x101010}
+	{x=63,y=291,color=0x71a2e5,offset=0x101010},
+	{  x= 61,  y=279, color=0x6d9ee0,offset=0x101010},
+	{  x=124,  y=258, color=0xf9d8d8,offset=0x101010},
+	{  x=162,  y=278, color=0xffffff,offset=0x101010},
+	{  x=174,  y=280, color=0x000000,offset=0x101010},
+	{  x=159,  y=242, color=0xadade1,offset=0x101010},
+	{  x=128,  y=257, color=0xf9d8d8,offset=0x101010},
+
 } ,
 杀斯卡哈 =  
 {
@@ -612,10 +653,12 @@ Servent_name_table = {
 {
 	Anchor="Middle",MainPoint={x=130,y=444},
 	Area={32,173,221,719},
-	{x=128,y=251,color=0xfbe3d1,offset=0x151515},
-	{x=102,y=221,color=0xbfb7a7,offset=0x151515},
-	{x=188,y=239,color=0xfff9f1,offset=0x151515},
-	{x=203,y=237,color=0xfd719a,offset=0x151515}
+	{ x=  57, y= 272,color= 0x548eaf,offset=0x151515},
+	{ x= 129,  y=255,color= 0xfae2d1,offset=0x151515},
+	{ x=  85,  y=255,color= 0xd92e82,offset=0x151515},
+	{ x= 186,  y=236, color=0xfff9f1,offset=0x151515},
+	{ x= 203, y= 236, color=0xfe6f98,offset=0x151515},
+
 } ,
 
 
@@ -627,7 +670,12 @@ Servent_name_table = {
 	{x=78,y=235,color=0x3c3455,offset=0x151515},
 	{x=143,y=230,color=0xf9e9e9,offset=0x101010},
 	{x=174,y=233,color=0x2d2840,offset=0x151515},
-	{x=188,y=224,color=0xf1f9f9,offset=0x101010}
+	{x=188,y=224,color=0xf1f9f9,offset=0x101010},
+	{  x=142, y= 226, color=0xf7e7eb,offset=0x101010},
+	{  x= 57, y= 296, color=0x50161f,offset=0x101010},
+	{ x= 175, y= 244, color=0x2c243d,offset=0x101010},
+	{ x= 135, y= 262, color=0xf9e9e9,offset=0x101010},
+	{ x= 115, y= 302,color= 0xe5dced,offset=0x101010},
 } ,
 
 黑狗 =  
@@ -708,7 +756,15 @@ Servent_name_table = {
 	{x=133,y=276,color=0xfdf4dd,offset=0x101010},
 	{x=60,y=260,color=0xb59e95,offset=0x101010},
 	{x=151,y=276,color=0xfff0d7,offset=0x101010},
-	{x=114,y=302,color=0xa1784f,offset=0x101010}
+	{x=114,y=302,color=0xa1784f,offset=0x101010},
+	{ x=  56, y= 231,color= 0x9c6b08,offset=0x101010},
+	{ x=  58, y= 245, color=0xb39a92,offset=0x101010},
+	{ x=  82, y= 223, color=0xecd391,offset=0x101010},
+	{ x= 115, y= 217, color=0xf2d9a8,offset=0x101010},
+	{ x= 135, y= 258, color=0xfdf5dc,offset=0x101010},
+	{ x= 201, y= 250, color=0xf8f8f0,offset=0x101010},
+	{ x= 114, y= 285,color= 0xa1784f,offset=0x101010},
+
 },
 
 R小莫 =  
@@ -953,7 +1009,16 @@ BB =
 	{x=196,y=237,color=0xfde2f5,offset=0x303030}
 },
 
+大英雄 = {
 
+	Anchor="Middle",MainPoint={x=640,y=360},
+	Area={32,173,221,719},
+	{x=75,y=239,color=0x98f1c8,offset=0x151515},
+	{x=110,y=245,color=0xf9d896,offset=0x151515},
+	{x=129,y=243,color=0xd3a180,offset=0x151515},
+	{x=171,y=240,color=0x2d2d2d,offset=0x151515}
+
+},
 }
 
 
@@ -988,14 +1053,16 @@ Gift_name_table = {
 } ,
 
 达芬奇 =  
- 
-{
+ {
 	Anchor="Middle",MainPoint={x=640,y=360},
-	Area={32,173,221,719},
-	{x=57,y=349,color=0xbd8b6a,offset=0x050505},
-	{x=99,y=330,color=0xfefefe,offset=0x050505},
-	{x=162,y=317,color=0x183552,offset=0x050505}
+	Area={32,173,221,719}, 
+	{  x= 59, y= 347, color=0xbf8e65,offset=0x050505},
+	{  x= 99, y= 330, color=0xffffff,offset=0x050505},
+	{  x=136,  y=334, color=0xfad9a0,offset=0x050505},
+	{  x=200, y= 330,color= 0x1f50a3,offset=0x050505},
 },
+
+
 
 宇宙棱镜 =  
  

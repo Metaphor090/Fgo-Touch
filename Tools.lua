@@ -131,6 +131,7 @@ function Tools.Source_Single_Click(x_site,y_site)
 	-- 模拟按下起始坐标(100, 200)
 	--nLog("当前的坐标为"..x_site..","..y_site)
 	local RealTable = All_Resolution.DevToProduction({x_site,y_site})
+	
 	touchDown(1,RealTable.x,RealTable.y)
 	mSleep(50)
 	touchUp(1,RealTable.x,RealTable.y )
@@ -217,7 +218,7 @@ function Tools.Mult_FindColor_Site(Refresh,table_site,Timer)
 	--循环两次查找
 	for SearchIndex=1,Timer,1 do
 	
-		local Retx,Rety = findMultiColorInRegionFuzzy( 0xf1cb27, "3|1|0xffce10,7|3|0xfdb606,11|3|0xffc20a,16|6|0xffb70a,21|9|0xffaa10,24|12|0xffa30c", dim, Production_table.Area[1], Production_table.Area[2], Production_table.Area[3], Production_table.Area[4])
+		local Retx,Rety = findMultiColorInRegionFuzzy( 0xffce10, "11|4|0xfeb908,21|11|0xfda20d,26|14|0x1d2d28,31|11|0x1c1d0c,32|4|0xfeb80f", dim, Production_table.Area[1], Production_table.Area[2], Production_table.Area[3], Production_table.Area[4])
 		nLog("ret:"..tostring(Retx)..","..tostring(Rety))
 		--,{ main = 0x303030, list = 0x303030 }
 		--local Retx,Rety = findMultiColorInRegionFuzzyByTable(color_table,dim,Production_table.Area[1],Production_table.Area[2],Production_table.Area[3],Production_table.Area[4],{orient =1})
@@ -234,9 +235,13 @@ function Tools.Mult_FindColor_Site(Refresh,table_site,Timer)
 end
 
 
+--满破礼装识别 动态找点
+
+
+
 --单点(多点)找色返回坐标
 function Tools.Single_FindColor_Site(Refresh,table_site,Timer)
-	local dim=95
+	local dim=90
 	--开发数据 转换成实体数据
 	local Production_table = All_Resolution.DevToProduction(table_site)
 	

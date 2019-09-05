@@ -25,6 +25,7 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 		
 		if FreeTypeFuncGlo == "固定刷一个Free本" then
 			Tools.mSleep_level(1000,level)
+			
 			Tools.Source_Single_Click(Room_Point[1],Room_Point[2])	--点击固定点Room_Point = {884,180}
 		
 		elseif FreeTypeFuncGlo == "下拉式刷Free本" then
@@ -44,10 +45,15 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 		
 			--先检测是否找到主线room，如果没找到则调用 搜寻map
 			PreGray = lowfunction.SearchMap(PreGray)
-		
+			if PreGray == true  then
+				return true
+			end
 			--就直接进了q
 			Tools.mSleep_level(1000,level)
 			Tools.Source_Single_Click(Room_Point[1],Room_Point[2])	--点击固定点Room_Point = {884,180}
+			
+				
+			
 		
 		end
 		
@@ -68,7 +74,7 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 			--自然回体  --关闭按钮 然后计时711,209
 			Tools.Source_Single_Click(AP_Recharge_Close[1],AP_Recharge_Close[2])
 			--等待时间计时 5分钟1点 5x40 200分钟 12000
-			mSleep(13000*1000)--等待时长
+			lowfunction.CheckTiming(200)
 			return 1
 			
 		else
@@ -232,6 +238,9 @@ function invoking.Game_Start(Room_os,Helper_os,EventOS,StoryOS)
 	BaseStageFlag = 0
 	CurrentStage = 1
 	Count_glo = Count_glo + 1
+	--这里更新一下刷本次数
+	fwCloseView("wid","vid"); --关闭文字视图
+	fwShowTextView("wid", "vid", Count_glo, "center", "FFFFFF", "FF0000", 8, 1,0,0, 25,25, 1);
 	
 end
 
@@ -272,6 +281,7 @@ function invoking.FightEX(StoryOS)
 	
 	Skill_colors = lowfunction.GetCurrentSkillAttribute()
 	while(fight_os) do
+		Tools.mSleep_level(1000,level)
 		Baoju_do_table = {}
 		local Baoju_ins_flag = 1
 		
@@ -281,8 +291,9 @@ function invoking.FightEX(StoryOS)
 		if Stella_switch_func_glo =="否" then --这两个有其中一个激活的话则关闭智能替换技能功能
 			--这里进行智能换人效果
 			Tools.mSleep_level(200,level)
-			lowfunction.GetCurrentCharAttribute()
-		
+			if SubstituteSkillGlo == "是" then --是
+				lowfunction.GetCurrentCharAttribute()
+			end
 		else
 			--在这里重置阿拉什换人效果 als_refresh_flag 阿拉什标识  SwitchFlag 换人信号
 			if 	als_refresh_flag == 1 and SwitchFlag == 1 then
@@ -295,6 +306,7 @@ function invoking.FightEX(StoryOS)
 		end
 		
 		
+	
 	
 		
 		--这里插入动画

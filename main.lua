@@ -30,8 +30,7 @@ Top = 0,Sub = 0,Left = 0,Right = 0,
 Width = 1280,
 Height = 720
 }
-
-
+Count_glo = 1
 
 local profile_flag = 0
 local temp_pix = 0
@@ -40,6 +39,7 @@ local true_width,true_height = getScreenSize()--获取屏幕分辨率
 
 os_type = getOSType();
 nLog("初始得分辨率是"..true_width.."x"..true_height)
+
 if os_type == "android" then --返回值为纯小写字母
 	
 	if true_height > true_width then
@@ -59,13 +59,18 @@ else
 		temp_pix = true_width
 		true_width = true_height
 		true_height = temp_pix
-	else
-		init(2);--IOS系统
+	elseif true_height == 2048 and true_width == 1536 then
+		dialog("暂不支持苹果平板！请使用越狱苹果手机！")
+		lua_exit();
 	end
 end
 
 nLog("当前得分辨率是"..true_width.."x"..true_height)
 
+--浮动窗口初始化
+fwShowWnd("wid",0,0,25,25,1);
+--创建一个按钮
+fwShowTextView("wid", "vid", Count_glo, "center", "FFFFFF", "FF0000", 8, 1,0,0, 25,25, 1);
 --根据实际情况得分辨率来划分不同得初始化函数
 
 --16：9得情况 那肯定是全屏 1.7777777777778
@@ -106,7 +111,7 @@ if type(edit1_glo) ~= "number" then
 	edit1_glo = 1
 end
 
-Count_glo = 0
+
 --当前启用
 nLog("当前区服："..tostring(ServerTypeGlo))
 
@@ -158,6 +163,17 @@ if ServerTypeGlo == "国服" then
 		{   x=498,  y=115, color=0x4c4c54},
 
 	} 
+	--主线是否战斗标识
+	PassFightTable = {
+	
+		Anchor="Middle",MainPoint={x=781,y=81},
+		Area={1129,120,1205,154},
+		{x=1161,y=133,color=0x931b60,offset=0x202020},
+		{x=1180,y=143,color=0x931454,offset=0x202020},
+		{x=1181,y=133,color=0x8a1454,offset=0x252525}
+	
+	}
+
 	Destruction_point = {845,587}
 	Close_point = {639,585}	
 
@@ -239,9 +255,6 @@ if main_func_glo == "自动刷故事(特异点里启动)" then   --自动故事�
 	local Room_os = true
 	FreeTypeFuncGlo = "故事模式刷取" --切换为故事模式开头
 	for i=1,edit1_glo,1 do
-		
-
-		
 		mSleep(math.random(1000,3000))
 		do_ret = invoking.Game_Start(Room_os,Helper_os,false,true)
 		ProgramSum = ProgramSum + 1 --在这里对脚本运行次数自增
